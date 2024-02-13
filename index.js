@@ -1,5 +1,5 @@
 let formSelections = {}
 
-function genderSelection(gender) {
-    formSelections["gender"] = gender
+function genderSelection(element) {
+    formSelections["gender"] = element.innerText
 }
