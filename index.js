@@ -25,9 +25,9 @@ function calculateBMI() {
         alert("Please provide valid weight")
     } else {
         if (units === "metric") {
-            document.getElementById("bmi-result").innerText = `${resultText} ${(weight / (height * height)) * 10000}`
+            document.getElementById("bmi-result").innerText = `${resultText} ${((weight / (height * height)) * 10000).toFixed(2)}`
         } else if (units === "imperial") {
-            document.getElementById("bmi-result").innerText = `${resultText} ${703 * (weight / (height * height))}`
+            document.getElementById("bmi-result").innerText = `${resultText} ${(703 * (weight / (height * height))).toFixed(2)}`
         } else {
             alert("Please check the units section before clicking submit.")
         }
