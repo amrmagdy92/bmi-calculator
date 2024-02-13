@@ -19,8 +19,10 @@ function calculateBMI() {
     let height = document.getElementById("height-input").value
     let weight = document.getElementById("weight-input").value
 
-    if (isNaN(height) || isNaN(weight)) {
-        alert("Please provide valid inputs")
+    if (!height > 0) {
+        alert("Please provide valid height")
+    } else if (!weight > 0) {
+        alert("Please provide valid weight")
     } else {
         if (units === "metric") {
             document.getElementById("bmi-result").innerText = `${resultText} ${(weight / (height * height)) * 10000}`
