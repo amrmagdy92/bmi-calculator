@@ -1,6 +1,7 @@
 let units
 let heightText = document.getElementById("height-label").innerText
 let weightText = document.getElementById("weight-label").innerText
+let resultText = document.getElementById("bmi-result").innerText
 
 function unitSelection(element) {
     if (element.innerText.toLowerCase() === "metric") {
@@ -12,4 +13,21 @@ function unitSelection(element) {
     }
     units = element.innerText.toLowerCase()
     document.getElementById("unit").innerHTML = element.innerHTML
+}
+
+function calculateBMI() {
+    let height = document.getElementById("height-input").value
+    let weight = document.getElementById("weight-input").value
+
+    if (isNaN(height) || isNaN(weight)) {
+        alert("Please provide valid inputs")
+    } else {
+        if (units === "metric") {
+            document.getElementById("bmi-result").innerText = `${resultText} ${(weight / (height * height)) * 10000}`
+        } else if (units === "imperial") {
+            document.getElementById("bmi-result").innerText = `${resultText} ${703 * (weight / (height * height))}`
+        } else {
+            alert("Please check the units section before clicking submit.")
+        }
+    }
 }
